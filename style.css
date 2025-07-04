@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-desktop.jpg);
+  --border-color: rgba(255, 255, 255, 0.5);
+  --backgroundbutton-color: rgba(255, 255, 255, 0.05);
+  --backgroundbutton-color-hover: rgba(0, 0, 0, 0.02);
+  --backgroundsocial-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/MoonStars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-desktop-light.jpg);
+  --border-color: rgba(0, 0, 0, 0.5);
+  --backgroundbutton-color: rgba(0, 0, 0, 0.05);
+  --backgroundbutton-color-hover: rgba(0, 0, 0, 0.02);
+  --backgroundsocial-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/Sun.svg);
+}
+
+body { /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; */
+
+  /*
+  background-color
+  background-image
+  background-repeat
+  background-position
+  background-size
+
+  or
+
+  background: color image repeat position/size
+  */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * { /* "*" Aplica em todos os elementos */
+  font-family: "Noto Sans", sans-serif; /* aplica a fonte */
+  color: var(--text-color); /* or white */
+}
+
+#container {
+  width: 360px; /* largura */
+  margin: 56px auto 0px; /* distancis da borda*/
+  padding: 0 24px; /* aumenta a distancia da borda; ^v - <> */
+
+  /*
+  margin: 56px auto; ^v - <>
+  or
+  margin: 56px auto 0px; ^ - <> - v
+  or
+  margin: 56px auto 0px auto; ^ - > - v - <
+  or
+  margin-top: auto; ^
+  margin-right: auto; >
+  margin-bottom: auto; v
+  margin-left: auto; <  */
+}
+
+#profile {
+  text-align: center; /* altera algo em aline */
+  padding: 24px; /* aumenta a distancia da borda ^v<> */
+}
+
+#profile img {
+  width: 112px; /* largura */
+}
+
+#profile a {
+  display: block;
+  font-weight: 500; /* tamanho da fonte */
+  line-height: 24px; /* distancia do borda inferior */
+  margin-top: 8px; /* distancia do borda do item acima */
+  text-decoration: none;
+}
+
+#switch {
+  position: relative; /* relativa ao absolute dentro do mesmo # */
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute; /* faz poder usar o z-index e criar um site encima de outro */
+  top: 50%;
+  z-index: 1; /* posiçãode andar */
+  transform: translateY(-50%); /* transforma em qualquer coisa */
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--backgroundbutton-color);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(4px);
+  -wabkit-backdrop-filter: blur(4px);
+  border-radius: 999px;
+}
+
+.links-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.links-container ul {
+  flex: 1;
+}
+
+ul {
+  list-style: none; /* tranforma o texto em texto puro */
+
+  display: flex; /* Cria uma linha e coluna imaginaria central */
+  flex-direction: column; /* empilha as "li" */
+  gap: 16px; /* da espaço entre os elementos */
+
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex; /* Cria uma linha e coluna imaginaria central */
+  align-items: center; /* centraliza com base na linha imaginaria central */
+  justify-content: center; /* centraliza com base na coluna imaginaria central */
+
+  padding: 16px 24px; /* aumenta a distancia da borda; ^v - <> */
+
+  background: var(--backgroundbutton-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px; /* curvatura da borda */
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* webkit= prefixo que alguns brauser precisam para usar o "blur" embaçado */
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: border 0,5s;
+  transition: background border 0.5s;
+}
+
+/* pseudo-selector */
+ul li a:hover {
+  background: var(--backgroundbutton-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* social-links */
+#social-links {
+  display: flex; /* só pra abilitar o center */
+  justify-content: center; /* alinha pro meio */
+
+  padding: 24px 0 6px;
+
+  font-size: 24px; /* tamanho de tudo no social-links */
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.5s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background-color: var(--backgroundsocial-color);
+}
+
+.top-right-buttons {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.top-button {
+  margin-left: 20px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.top-button:hover {
+  text-decoration: underline;
+}
+  
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+}
