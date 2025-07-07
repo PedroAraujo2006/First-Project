@@ -1,4 +1,4 @@
-<h1 align="center"> Dev Start </h1>
+<h1 align="center"> Dev Links </h1>
 
 <p align="center">
 Programa exclusivo e gratuito, promovido pela Rocketseat para ensino de tecnologias WEB.
@@ -32,7 +32,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O DevLinks é um agregador de links para usar como cartão de visitas online.
+O DevLinks é um agregador de links para usar como cartãgo de visitas online.
 
 ## 🔖 Licença
 

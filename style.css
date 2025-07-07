@@ -6,7 +6,7 @@
 
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bg-desktop.jpg);
+  --bg-url: url(./assets/bg-mobile.jpg);
   --border-color: rgba(255, 255, 255, 0.5);
   --backgroundbutton-color: rgba(255, 255, 255, 0.05);
   --backgroundbutton-color-hover: rgba(0, 0, 0, 0.02);
@@ -16,7 +16,7 @@
 
 .light {
   --text-color: black;
-  --bg-url: url(./assets/bg-desktop-light.jpg);
+  --bg-url: url(./assets/bg-mobile-light.jpg);
   --border-color: rgba(0, 0, 0, 0.5);
   --backgroundbutton-color: rgba(0, 0, 0, 0.05);
   --backgroundbutton-color-hover: rgba(0, 0, 0, 0.02);
@@ -50,7 +50,8 @@ body * { /* "*" Aplica em todos os elementos */
 }
 
 #container {
-  width: 360px; /* largura */
+  width: 100%; /* largura */
+  max-width: 588px;
   margin: 56px auto 0px; /* distancis da borda*/
   padding: 0 24px; /* aumenta a distancia da borda; ^v - <> */
 
